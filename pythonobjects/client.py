@@ -12,8 +12,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print('Nothing received from server anymore')
             break
         
-        print(type(msg))
-        print(msg)
-        unpickled_msg = pickle.loads(msg)
-        print(type(unpickled_msg))
-        print(unpickled_msg)
+        product_object = pickle.loads(msg)
+        print(product_object.pid)
+        print(product_object.pname)
+        print(product_object.pprice)
